@@ -91,4 +91,27 @@ window.addEventListener("load", function() {
         rocket.style.top = `${upDownTracker}px`;
         spaceShuttleHeight.innerHTML = (~~spaceShuttleHeight.innerHTML) - 10000;
     });
+
+    document.onkeydown = function(event) {
+        switch (event.keyCode) {
+           case 37:
+            leftRightTracker -= 10;
+            rocket.style.left = `${leftRightTracker}px`;
+           break;
+           case 38:
+            upDownTracker -= 10;
+            rocket.style.top = `${upDownTracker}px`;
+            spaceShuttleHeight.innerHTML = (~~spaceShuttleHeight.innerHTML) + 10000;
+           break;
+           case 39:
+            leftRightTracker += 10;
+            rocket.style.left = `${leftRightTracker}px`;
+           break;
+           case 40:
+            upDownTracker += 10;
+            rocket.style.top = `${upDownTracker}px`;
+            spaceShuttleHeight.innerHTML = (~~spaceShuttleHeight.innerHTML) - 10000;
+           break;
+        }
+     };
 });
